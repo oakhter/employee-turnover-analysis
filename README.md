@@ -1,23 +1,31 @@
-# Employee Turnover Prediction - Salifort Motors
+# Employee Turnover Prediction - Salifort Motors HR Data
 
 ## Project Overview
 
 Course capstone project using a simulated HR dataset.
 
-This project analyzes employee survey and workplace data to understand patterns associated with turnover and predict whether an employee is likely to leave. It is intended as a supporting portfolio project that demonstrates an end-to-end analytics and machine learning workflow, from business framing through model evaluation and recommendations.
+This project analyzes employee survey and workplace data to understand patterns associated with turnover and predict whether an employee is likely to leave. Logistic regression, decision tree, and random forest models were compared, with random forest performing best on the leaver class in the main model comparison.
 
-## Business Problem
+It is intended as a supporting portfolio project that demonstrates an end-to-end analytics and machine learning workflow, from business framing through model evaluation and recommendations.
 
-Employee turnover can create operational disruption, hiring costs, and knowledge loss. The goal of this analysis is to identify employee characteristics associated with turnover and compare classification models that predict whether an employee left the organization.
+## Business Understanding
+
+The stakeholder for this simulated project is an HR or people operations team looking for ways to better understand employee turnover. Employee turnover can create operational disruption, hiring costs, and knowledge loss.
+
+The goal of this analysis is to identify employee characteristics associated with turnover and compare classification models that predict whether an employee left the organization.
 
 The target variable is `left`:
 
 - `0` = employee stayed
 - `1` = employee left
 
-## Dataset
+## Data Understanding
 
 The dataset is the HR Capstone dataset from the Google Advanced Data Analytics capstone project. It contains simulated employee survey and workplace variables, including satisfaction score, last evaluation score, project count, average monthly hours, tenure, work accident history, promotion history, department, salary, and turnover status.
+
+No real company data is used. The dataset does not include a real collection timeframe, and the analysis should be interpreted as a course-based modeling exercise rather than a production HR system.
+
+Exploratory visualizations are included in the notebook for turnover by satisfaction, monthly hours, project count, tenure, salary, department, and correlations among numeric variables.
 
 ## Tools Used
 
@@ -49,7 +57,9 @@ The dataset is the HR Capstone dataset from the Google Advanced Data Analytics c
 - Salary and promotion history appeared related to turnover patterns.
 - Department-level differences existed, but the analysis should be treated as descriptive rather than causal.
 
-## Model Results
+## Modeling and Evaluation
+
+This project compares Logistic Regression, Decision Tree, and Random Forest models. XGBoost was also run as a supplemental model in the notebook, but the main comparison focuses on the three models below.
 
 | Model | Accuracy | Precision for Leavers | Recall for Leavers | F1 for Leavers |
 |---|---:|---:|---:|---:|
@@ -65,13 +75,15 @@ Decision tree and random forest performed much better on the leaver class. The r
 
 Random Forest is the recommended model from this analysis. It produced high precision for employees who left while maintaining strong recall and F1-score. Accuracy alone is not enough for this problem because a model can perform well overall while missing many employees in the minority class.
 
-## Business Recommendations
+## Conclusion
 
 - Monitor broader employee groups with low satisfaction scores.
 - Review workload balance for employees with unusually high or low project counts.
 - Investigate turnover risk patterns around 4-6 years of tenure.
 - Review salary and promotion patterns for signs of retention issues.
 - Use the model as decision support for HR planning, not as an automated decision-making system.
+
+Future improvements could include cross-validation, hyperparameter tuning, threshold tuning, and validation on new data. In a real HR setting, the analysis would also benefit from features such as manager history, compensation changes, engagement comments, team size, and voluntary vs. involuntary turnover.
 
 ## Limitations and Ethics
 

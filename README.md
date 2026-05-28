@@ -96,6 +96,10 @@ Important limitations:
 - Potentially useful features are missing, such as manager history, compensation changes, engagement comments, team size, and voluntary vs. involuntary turnover.
 - Any model would need validation before real-world use.
 
+## Use of Generative AI
+
+Generative AI was used to help organize this completed capstone notebook into a cleaner GitHub portfolio format, including README structure, wording, repository organization, and summary documentation. The analysis, dataset, modeling workflow, and reported model metrics come from the completed course capstone notebook and were reviewed for consistency before publishing.
+
 ## Repository Structure
 
 ```text
